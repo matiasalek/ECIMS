@@ -23,6 +23,8 @@ public class Warehouses {
     @Column
     private LocalDate created_at;
 
+    public Warehouses(){}
+
     public long getWarehouse_id() {
         return warehouse_id;
     }

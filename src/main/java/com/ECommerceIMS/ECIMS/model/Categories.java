@@ -22,6 +22,9 @@ public class Categories {
     @Column
     private LocalDateTime updated_at;
 
+    public Categories() {
+    }
+
     public Long getCategory_id() {
         return category_id;
     }

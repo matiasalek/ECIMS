@@ -31,6 +31,8 @@ public class Inventory {
     @Column
     private LocalDateTime updated_at;
 
+    public Inventory(){}
+
     public Long getInventory_id() {
         return inventory_id;
     }

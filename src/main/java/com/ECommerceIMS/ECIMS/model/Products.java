@@ -32,6 +32,8 @@ public class Products {
     @Column
     private LocalDateTime updated_at;
 
+    public Products(){}
+
     public Long getId() {
         return id;
     }
