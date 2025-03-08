@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "inventory_transactions")
-public class Inventory_Transactions {
+public class InventoryTransactions {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long transaction_id;
@@ -28,7 +28,7 @@ public class Inventory_Transactions {
     @Column
     private LocalDateTime created_at;
 
-    public Inventory_Transactions() {
+    public InventoryTransactions() {
     }
 
     public enum transaction_type {

@@ -1,11 +1,10 @@
 package com.ECommerceIMS.ECIMS.model;
 
 import jakarta.persistence.*;
-import org.hibernate.query.Order;
 
 @Entity
 @Table(name = "order_item")
-public class Order_Item {
+public class OrderItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long order_item_id;
@@ -28,7 +27,7 @@ public class Order_Item {
     @Column
     private int quantity_allocated;
 
-    public Order_Item(){}
+    public OrderItem(){}
 
     public Long getOrder_item_id() {
         return order_item_id;
