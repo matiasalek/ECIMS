@@ -34,7 +34,15 @@ public class CategoriesService {
         return categoriesRepository.save(categories);
     }
 
-    
+    public Categories updateCategory(Long id, Categories categoryDetails) {
+        return categoriesRepository.findById(id)
+                .map(categories -> {
+                    categories.setName(categoryDetails.getName());
+                    categories.setDescription(categoryDetails.getDescription());
+                    categories.setCreated_at(categoryDetails.getCreated_at());
+                    categories.setUpdated_at(categoryDetails.getUpdated_at());
+                }).orElseThrow(() -> new ResourceNotFoundException("Category not found with id " + id));
+    }
 
     public void deleteCategory(Long id) {
         if (!categoriesRepository.existsById(id)) {
