@@ -6,6 +6,8 @@ import com.ECommerceIMS.ECIMS.repository.CategoriesRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class CategoriesService {
     private final CategoriesRepository categoriesRepository;
@@ -15,8 +17,29 @@ public class CategoriesService {
     }
 
     @Transactional
+    public List<Categories> getAllCategories() {
+        return categoriesRepository.findAll();
+    }
+
+    @Transactional
     public Categories getCategoriesById(Long id) {
         return categoriesRepository.findById(id)
                 .orElseThrow(()-> new ResourceNotFoundException("Categories not found"));
+    }
+
+    public Categories createCategory(Categories categories) {
+        if (categories.getCategory_id() != null) {
+            throw new ResourceNotFoundException("Category alredy exist.");
+        }
+        return categoriesRepository.save(categories);
+    }
+
+    
+
+    public void deleteCategory(Long id) {
+        if (!categoriesRepository.existsById(id)) {
+            throw new ResourceNotFoundException("Category not found");
+        }
+        categoriesRepository.deleteById(id);
     }
 }
