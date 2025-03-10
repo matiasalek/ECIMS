@@ -29,7 +29,7 @@ public class CategoriesService {
 
     public Categories createCategory(Categories categories) {
         if (categories.getCategory_id() != null) {
-            throw new ResourceNotFoundException("Category alredy exist.");
+            throw new ResourceNotFoundException("Category already exist.");
         }
         return categoriesRepository.save(categories);
     }
