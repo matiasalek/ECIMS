@@ -41,6 +41,7 @@ public class CategoriesService {
                     categories.setDescription(categoryDetails.getDescription());
                     categories.setCreated_at(categoryDetails.getCreated_at());
                     categories.setUpdated_at(categoryDetails.getUpdated_at());
+                    return categoriesRepository.save(categories);
                 }).orElseThrow(() -> new ResourceNotFoundException("Category not found with id " + id));
     }
 
