@@ -1,7 +1,8 @@
 package com.ECommerceIMS.ECIMS.model;
 
 import jakarta.persistence.*;
-import java.time.LocalDateTime;
+
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "categories")
@@ -17,10 +18,11 @@ public class Categories {
     private String description;
 
     @Column
-    private LocalDateTime created_at;
+    private LocalDate created_at;
 
     @Column
-    private LocalDateTime updated_at;
+    private LocalDate updated_at;
+
 
     public Categories() {
     }
@@ -49,19 +51,19 @@ public class Categories {
         this.description = description;
     }
 
-    public LocalDateTime getCreated_at() {
+    public LocalDate getCreated_at() {
         return created_at;
     }
 
-    public void setCreated_at(LocalDateTime created_at) {
+    public void setCreated_at(LocalDate created_at) {
         this.created_at = created_at;
     }
 
-    public LocalDateTime getUpdated_at() {
+    public LocalDate getUpdated_at() {
         return updated_at;
     }
 
-    public void setUpdated_at(LocalDateTime updated_at) {
+    public void setUpdated_at(LocalDate updated_at) {
         this.updated_at = updated_at;
     }
 }
