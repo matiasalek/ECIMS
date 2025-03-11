@@ -9,7 +9,7 @@ import java.time.LocalDate;
 public class Warehouses {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long warehouse_id;
+    private Long warehouse_id;
 
     @Column
     private String name;
@@ -25,11 +25,11 @@ public class Warehouses {
 
     public Warehouses(){}
 
-    public long getWarehouse_id() {
+    public Long getWarehouse_id() {
         return warehouse_id;
     }
 
-    public void setWarehouse_id(long warehouse_id) {
+    public void setWarehouse_id(Long warehouse_id) {
         this.warehouse_id = warehouse_id;
     }
 
