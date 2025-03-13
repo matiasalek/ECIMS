@@ -1,10 +1,7 @@
 package com.ECommerceIMS.ECIMS.controller;
 
-import com.ECommerceIMS.ECIMS.model.Categories;
 import com.ECommerceIMS.ECIMS.model.Products;
-import com.ECommerceIMS.ECIMS.repository.CategoriesRepository;
 import com.ECommerceIMS.ECIMS.repository.ProductsRepository;
-import com.ECommerceIMS.ECIMS.service.CategoriesService;
 import com.ECommerceIMS.ECIMS.service.ProductsService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
