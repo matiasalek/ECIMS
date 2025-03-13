@@ -1,6 +1,5 @@
 package com.ECommerceIMS.ECIMS.controller;
 
-import com.ECommerceIMS.ECIMS.model.Categories;
 import com.ECommerceIMS.ECIMS.model.Warehouses;
 import com.ECommerceIMS.ECIMS.repository.WarehousesRepository;
 import com.ECommerceIMS.ECIMS.service.WarehousesService;

@@ -1,11 +1,8 @@
 package com.ECommerceIMS.ECIMS.controller;
 
 import com.ECommerceIMS.ECIMS.model.Orders;
-import com.ECommerceIMS.ECIMS.model.Warehouses;
 import com.ECommerceIMS.ECIMS.repository.OrdersRepository;
-import com.ECommerceIMS.ECIMS.repository.WarehousesRepository;
 import com.ECommerceIMS.ECIMS.service.OrdersService;
-import com.ECommerceIMS.ECIMS.service.WarehousesService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

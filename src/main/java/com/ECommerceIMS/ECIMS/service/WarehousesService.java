@@ -1,7 +1,6 @@
 package com.ECommerceIMS.ECIMS.service;
 
 import com.ECommerceIMS.ECIMS.exception.ResourceNotFoundException;
-import com.ECommerceIMS.ECIMS.model.Categories;
 import com.ECommerceIMS.ECIMS.model.Warehouses;
 import com.ECommerceIMS.ECIMS.repository.WarehousesRepository;
 import jakarta.transaction.Transactional;
