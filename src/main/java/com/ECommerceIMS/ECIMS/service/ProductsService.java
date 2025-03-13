@@ -21,7 +21,7 @@ public class ProductsService {
     }
 
     @Transactional
-    public Products findProductById(Long id) {
+    public Products getProductById(Long id) {
         return productsRepository.findById(id).orElseThrow(()-> new ResourceNotFoundException("Product not found"));
     }
 
