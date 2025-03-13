@@ -1,5 +1,6 @@
 package com.ECommerceIMS.ECIMS.controller;
 
+import com.ECommerceIMS.ECIMS.DTO.ProductsDTO;
 import com.ECommerceIMS.ECIMS.model.Products;
 import com.ECommerceIMS.ECIMS.repository.ProductsRepository;
 import com.ECommerceIMS.ECIMS.service.ProductsService;
@@ -33,14 +34,14 @@ public class ProductsController {
     }
 
     @PostMapping
-    public ResponseEntity<Products> createProduct(@RequestBody Products products) {
-        Products createdProduct = productsService.createProduct(products);
+    public ResponseEntity<Products> createProduct(@RequestBody ProductsDTO productsDTO) {
+        Products createdProduct = productsService.createProduct(productsDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdProduct);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Products> updateProduct(@PathVariable Long id, @RequestBody Products productDetails) {
-        Products updatedProduct = productsService.updateProduct(id, productDetails);
+    public ResponseEntity<Products> updateProduct(@PathVariable Long id, @RequestBody ProductsDTO productsDTO) {
+        Products updatedProduct = productsService.updateProduct(id, productsDTO);
         return ResponseEntity.ok(updatedProduct);
     }
 
@@ -48,5 +49,10 @@ public class ProductsController {
     public ResponseEntity<Void> deleteProduct(@PathVariable Long id) {
         productsService.deleteProduct(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("/categories/{categoryId}")
+    public ResponseEntity<List<Products>> getProductByCategoryId(@PathVariable long categoryId) {
+        return ResponseEntity.ok(productsService.getProductByCategoryId(categoryId));
     }
 }
