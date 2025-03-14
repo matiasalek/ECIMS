@@ -1,1 +1,1 @@
-# Inventory Managment System for an E-Commerce made on Java
+# Inventory Managment System for an E-Commerce made on Java Spring Boot
