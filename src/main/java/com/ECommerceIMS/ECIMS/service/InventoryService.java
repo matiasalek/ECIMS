@@ -84,10 +84,10 @@ public class InventoryService {
     }
 
     public List<Inventory> getInventoryByProductId(Long product_id) {
-        return inventoryRepository.findByProductsProductId(product_id);
+        return inventoryRepository.findByProducts_Product_id(product_id);
     }
 
     public List<Inventory> getInventoryByWarehouseId(Long warehouse_id) {
-        return inventoryRepository.findByWarehousesWarehouseId(warehouse_id);
+        return inventoryRepository.findByWarehouses_Warehouse_id(warehouse_id);
     }
 }

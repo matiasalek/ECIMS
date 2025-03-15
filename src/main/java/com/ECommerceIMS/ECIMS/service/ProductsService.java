@@ -74,6 +74,6 @@ public class ProductsService {
     }
 
     public List<Products> getProductByCategoryId(Long category_id) {
-        return productsRepository.findByCategoriesCategoryId(category_id);
+        return productsRepository.findByCategories_Category_id(category_id);
     }
 }
