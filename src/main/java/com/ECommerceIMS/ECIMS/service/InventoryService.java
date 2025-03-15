@@ -9,9 +9,11 @@ import com.ECommerceIMS.ECIMS.repository.InventoryRepository;
 import com.ECommerceIMS.ECIMS.repository.ProductsRepository;
 import com.ECommerceIMS.ECIMS.repository.WarehousesRepository;
 import jakarta.transaction.Transactional;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class InventoryService {
     private final InventoryRepository inventoryRepository;
     private final ProductsRepository productsRepository;
