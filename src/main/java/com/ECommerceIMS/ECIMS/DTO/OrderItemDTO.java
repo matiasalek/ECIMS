@@ -8,6 +8,8 @@ public class OrderItemDTO {
     private int quantity_order;
     private int quantity_allocated;
 
+    public OrderItemDTO () {}
+
     public Long getOrder_item_id() {
         return order_item_id;
     }
