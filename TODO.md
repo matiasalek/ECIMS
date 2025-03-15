@@ -1,3 +1,2 @@
-Finish 3 services and 3 controllers:
+Finish 1 service and 1 controller:
 - InventoryTransactions
-- OrderItem
