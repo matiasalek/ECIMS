@@ -17,7 +17,7 @@ public class InventoryTransactions {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "transaction_type", nullable = false)
-    private transaction_type transactionType;
+    private TransactionType transactionType;
 
     @Column
     private int quantity;
@@ -31,7 +31,7 @@ public class InventoryTransactions {
     public InventoryTransactions() {
     }
 
-    public enum transaction_type {
+    public enum TransactionType {
         RECEIVE,
         SHIP,
         ADJUST
@@ -53,11 +53,11 @@ public class InventoryTransactions {
         this.inventory = inventory;
     }
 
-    public transaction_type getTransactionType() {
+    public TransactionType getTransactionType() {
         return transactionType;
     }
 
-    public void setTransactionType(transaction_type transactionType) {
+    public void setTransactionType(TransactionType transactionType) {
         this.transactionType = transactionType;
     }
 
