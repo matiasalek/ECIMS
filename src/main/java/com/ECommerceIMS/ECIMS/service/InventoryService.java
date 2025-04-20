@@ -83,6 +83,18 @@ public class InventoryService {
         inventoryRepository.deleteById(id);
     }
 
+    public void sendLowThresholdNotification(InventoryDTO inventoryDTO) {
+        // Include item details in the notification
+        System.out.println("ALERT: Product " + inventoryDTO.getProduct_id() + " is below threshold. Current quantity: "
+                + inventoryDTO.getQuantity_on_hand() + ", Threshold: " + inventoryDTO.getReorder_threshold());
+    }
+
+    public void checkAndNotifyLowStock(InventoryDTO inventoryDTO) {
+        if (inventoryDTO.getQuantity_on_hand() + inventoryDTO.getQuantity_allocated() < inventoryDTO.getReorder_threshold()) {
+            sendLowThresholdNotification(inventoryDTO);
+        }
+    }
+
     public List<Inventory> getInventoryByProductId(Long product_id) {
         return inventoryRepository.findByProducts_Product_id(product_id);
     }
