@@ -33,6 +33,16 @@ public class InventoryController {
         return ResponseEntity.ok(inventory);
     }
 
+    @GetMapping("/low-threshold")
+    public ResponseEntity<List<Inventory>> getInventoriesWithLowThreshold() {
+        List<Inventory> lowStockItems = inventoryService.checkAndNotifyLowStock();
+
+        if (lowStockItems.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(lowStockItems);
+    }
+
     @PostMapping
     public ResponseEntity<Inventory> createInventory(@RequestBody InventoryDTO inventoryDTO) {
         Inventory createdInventory = inventoryService.createInventory(inventoryDTO);

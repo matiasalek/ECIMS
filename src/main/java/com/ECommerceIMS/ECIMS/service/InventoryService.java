@@ -83,16 +83,19 @@ public class InventoryService {
         inventoryRepository.deleteById(id);
     }
 
-    public void sendLowThresholdNotification(InventoryDTO inventoryDTO) {
+    public void sendLowThresholdNotification(Inventory inventory) {
         // Include item details in the notification
-        System.out.println("ALERT: Product " + inventoryDTO.getProduct_id() + " is below threshold. Current quantity: "
-                + inventoryDTO.getQuantity_on_hand() + ", Threshold: " + inventoryDTO.getReorder_threshold());
+        System.out.println("ALERT: Product " + inventory.getInventory_id() + " is below threshold. Current quantity: "
+                + inventory.getQuantity_on_hand() + ", Threshold: " + inventory.getReorder_threshold());
     }
 
-    public void checkAndNotifyLowStock(InventoryDTO inventoryDTO) {
-        if (inventoryDTO.getQuantity_on_hand() + inventoryDTO.getQuantity_allocated() < inventoryDTO.getReorder_threshold()) {
-            sendLowThresholdNotification(inventoryDTO);
-        }
+    public List<Inventory> checkAndNotifyLowStock() {
+        List<Inventory> lowStockItems = inventoryRepository.findItemsBelowThreshold();
+
+        // Optionally send notifications for each item
+        lowStockItems.forEach(this::sendLowThresholdNotification);
+
+        return lowStockItems;
     }
 
     public List<Inventory> getInventoryByProductId(Long product_id) {
